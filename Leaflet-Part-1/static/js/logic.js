@@ -39,7 +39,7 @@ d3.json(queryUrl).then(function (data) {
     },
     // Bind popups to each marker
     onEachFeature: function (feature, layer) {
-      layer.bindPopup(`<h3>${feature.properties.place}</h3><hr><p>${new Date(feature.properties.time)}</p>`);
+      layer.bindPopup(`<h3>${feature.properties.place}</h3><hr><p>${new Date(feature.properties.time)}</p> <h4>Magnitude: ${feature.properties.mag}</h4><hr><h4>Depth: ${feature.geometry.coordinates[2]}</h4>`);
     }
   }).addTo(myMap);
 

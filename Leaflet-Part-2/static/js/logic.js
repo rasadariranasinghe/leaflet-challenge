@@ -9,6 +9,18 @@ let myMap = L.map("map", {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(myMap);
   
+// Use d3 to read the JSON file.
+// The data from the JSON file is arbitrarily named importedData as the argument.
+d3.json("data/data.json").then((importedData) => {
+  
+  let data = importedData;
+
+
+let basemaps ={
+  
+}
+
+
   // Define a function to determine marker color based on depth
   function markerColor(depth) {
     return depth > 90 ? "#ff5f65" :
@@ -20,7 +32,6 @@ let myMap = L.map("map", {
                         "#98ee00";
   }
 
-  
   // Fetch the earthquake data
   let queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
   
